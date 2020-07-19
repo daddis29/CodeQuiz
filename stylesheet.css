@@ -1,26 +1,26 @@
 :root {
-  background-color: #ecf5ff;
+  background-color: #000000;
   font-size: 62.5%;
 }
 
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #FF69B4;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; 
 }
 
 h1 {
   font-size: 5.4rem;
-  color: #56a5eb;
+  color: #FF69B4;
   margin-bottom: 5rem;
 }
 
@@ -40,7 +40,6 @@ h3 {
   font-weight: 500;
 }
 
-/* UTILITIES */
 
 .container {
   width: 100vw;
@@ -79,16 +78,15 @@ h3 {
   display: none;
 }
 
-/* BUTTONS */
 .btn {
   font-size: 1.8rem;
   padding: 1rem 0;
   width: 20rem;
   text-align: center;
-  border: 0.1rem solid #56a5eb;
+  border: 0.1rem solid #FFC0CB;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: #56a5eb;
+  color: #FF69B4;
   background-color: white;
 }
 
@@ -105,7 +103,7 @@ h3 {
   transform: none;
 }
 
-/* FORMS */
+
 form {
   width: 100%;
   display: flex;

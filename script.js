@@ -3,6 +3,8 @@ const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById("progressText");
 const scoreText = document.getElementById("score");
 const progressBarFull = document.getElementById("progressBarFull");
+
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -11,35 +13,49 @@ let availableQuesions = [];
 
 let questions = [
     {
-        question: "Inside which HTML element do we put the JavaScript??",
-        choice1: "<script>",
-        choice2: "<javascript>",
-        choice3: "<js>",
-        choice4: "<scripting>",
-        answer: 1
+        question: "What does HTML stand for?",
+        choice1: "Ham Tomato Mayo Lettuce",
+        choice2: "Hyper Text Markup Language",
+        choice3: "Happy To Meet Lori",
+        choice4: "Have The Mets Lost?",
+        answer: 2
     },
     {
-        question:
-            "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        choice1: "<script href='xxx.js'>",
-        choice2: "<script name='xxx.js'>",
-        choice3: "<script src='xxx.js'>",
-        choice4: "<script file='xxx.js'>",
+        question: "What is the proper code for the first heading?",
+        choice1: "<heading>",
+        choice2: "<header>",
+        choice3: "<h1>",
+        choice4: "<head>",
         answer: 3
     },
     {
-        question: " How do you write 'Hello World' in an alert box?",
-        choice1: "msgBox('Hello World');",
-        choice2: "alertBox('Hello World');",
-        choice3: "msg('Hello World');",
-        choice4: "alert('Hello World');",
+        question: "In CSS, what is the syntax for background color?",
+        choice1: "background",
+        choice2: "color-background",
+        choice3: "color",
+        choice4: "background-color",
         answer: 4
-    }
+    },
+    {
+        question: "What are the main coding languages?",
+        choice1: "Coffee, Bagel, HTML",
+        choice2: "CSS, Javascript, JSON",
+        choice3: "CSS, Javascript, HTML",
+        choice4: "None of these",
+        answer: 3
+    },
+    {
+        question: "How should a string be defined in Javascript?",
+        choice1: "With quotes around it",
+        choice2: "A question mark at the end",
+        choice3: "Two exclamation points before it",
+        choice4: "All of these",
+        answer: 1
+    },
 ];
 
-//CONSTANTS
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const CORRECT_BONUS = 1;
+const MAX_QUESTIONS = 5;
 
 startGame = () => {
     questionCounter = 0;
@@ -51,12 +67,12 @@ startGame = () => {
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
-        //go to the end page
+
         return window.location.assign("/end.html");
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
-    //Update the progress bar
+
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
