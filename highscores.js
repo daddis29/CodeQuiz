@@ -1,5 +1,5 @@
 const highScoresList = document.getElementById("highScoresList");
-const highScores = localStorage.getItem("highScores") || [];
+const highScores = localStorage.setItem('highScores', JSON.stringify(highScores));
 
 
 highScoresList.innerHTML = highScores

@@ -118,3 +118,4 @@ incrementScore = num => {
 };
 
 startGame();
+
